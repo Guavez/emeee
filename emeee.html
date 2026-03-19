@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For You 💛</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #fff9c4, #ffe082);
+      text-align: center;
+      color: #5d4037;
+      overflow: hidden;
+      height: 100vh;
+    }
+
+    .container {
+      margin-top: 50px;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 2.8em;
+    }
+
+    .name {
+      color: #f57f17;
+    }
+
+    h2 {
+      margin: 20px 0;
+    }
+
+    p {
+      font-size: 1.2em;
+      max-width: 600px;
+      margin: 20px auto;
+      line-height: 1.6;
+    }
+
+    button {
+      margin: 15px;
+      padding: 12px 25px;
+      font-size: 16px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s;
+      position: relative;
+    }
+
+    .yes {
+      background-color: #fbc02d;
+      color: white;
+    }
+
+    .yes:hover {
+      background-color: #f9a825;
+    }
+
+    .no {
+      background-color: white;
+      color: #fbc02d;
+      position: absolute;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    #response {
+      font-size: 1.5em;
+      margin-top: 30px;
+      color: #e65100;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Hi <span class="name">My Baby</span> 💛</h1>
+
+  <!-- Intro section -->
+  <div id="intro">
+    <p>
+      Am I pretty? 💖
+    </p>
+    <button class="yes" onclick="showMain()">YES ➡️</button>
+  </div>
+
+  <!-- Main question section (hidden at first) -->
+  <div id="main" class="hidden">
+    <h2 style="font-size: 2.4em; color:#e65100; margin-top: 20px;">
+      Can I be your baby, wife, girlfriend, partner, best friend, soulmate, or anything you want me to be?💖
+      (I know this is sudden but I just want to be honest with you and tell you how I feel about you hehe)
+    </h2>
+
+    <p>
+      Hi, mwehehehehe I just want you to know that i love you so much and I'm willing to take a risk just for you hehe.
+       I know you might be shock because your not ready for this but 
+       I want to ask you formally if I can court you to be my girlfriend, wife, love of my life, my baby. 
+       I'm fucking sure about you and I'm serious about you. 💛<br><br>
+
+      And if you're not ready yet, it's okay.  
+      I’ll respect that, always.
+    </p>
+
+    <button class="yes" onclick="sayYes()">Yes 💕</button>
+    <button class="no" onmouseover="moveButton()">No 😅</button>
+
+    <h2 id="response" class="hidden">
+      YEYYY, YOU ARE MY WIFE FOR LIFE 😭💛
+    </h2>
+  </div>
+</div>
+
+<script>
+  // Show main question/message
+  function showMain() {
+    document.getElementById("intro").classList.add("hidden");
+    document.getElementById("main").classList.remove("hidden");
+  }
+
+  // Yes button shows response
+  function sayYes() {
+    document.getElementById("response").classList.remove("hidden");
+  }
+
+  // Move the No button randomly
+  function moveButton() {
+    const button = document.querySelector(".no");
+    const x = Math.random() * (window.innerWidth - 120);
+    const y = Math.random() * (window.innerHeight - 60);
+    button.style.left = x + "px";
+    button.style.top = y + "px";
+  }
+</script>
+
+</body>
+</html>
